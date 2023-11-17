@@ -6,3 +6,5 @@
 /.vs/ProjectEvaluation
 **/bin/*
 **/obj/*
+/Mango.Services.CouponAPI/bin/Debug/net8.0/Mango.Services.CouponAPI.exe
+/.vs
