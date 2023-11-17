@@ -5,7 +5,7 @@ namespace Mango.Web.Services.Contracts
     public interface ICouponService
     {
 
-        Task<ResponseDto> GetAllCoupons();
+        Task<ResponseDto?> GetAllCoupons();
         Task<ResponseDto?> GetCouponAsync(string couponCode);
         Task<ResponseDto?> GetCouponByIdAsync(int id);
         Task<ResponseDto?> CreateCouponAsync(CouponDto couponDto);
