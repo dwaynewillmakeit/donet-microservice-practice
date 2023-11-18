@@ -20,7 +20,7 @@ namespace Mango.Web.Services
         {
             try
             {
-                HttpClient client = _httpClientFactory.CreateClient("MangoAPI");
+                HttpClient httpClient = _httpClientFactory.CreateClient("MangoAPI");
                 HttpRequestMessage message = new();
                 message.Headers.Add("Accept", "application/json");
 
@@ -56,7 +56,7 @@ namespace Mango.Web.Services
 
                 }
 
-                apiResponse = await client.SendAsync(message);
+                apiResponse = await httpClient.SendAsync(message);
 
                 switch (apiResponse.StatusCode)
                 {
