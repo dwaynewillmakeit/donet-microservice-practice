@@ -1,4 +1,5 @@
-﻿using Mango.Web.Models.Dto;
+﻿using Mango.Web.Models;
+using Mango.Web.Models.Dto;
 using Mango.Web.Services.Contracts;
 using Mango.Web.Utils;
 
@@ -23,7 +24,7 @@ namespace Mango.Web.Services
             });
         }
 
-        public async Task<ResponseDto?> DeleteCoupon(int id)
+        public async Task<ResponseDto?> DeleteCouponAsync(int id)
         {
             return await _baseService.SendAsync(new RequestDto()
             {
@@ -32,7 +33,7 @@ namespace Mango.Web.Services
             });
         }
 
-        public async Task<ResponseDto?> GetAllCoupons()
+        public async Task<ResponseDto?> GetAllCouponsAsync()
         {
             return await _baseService.SendAsync(new RequestDto()
             {
