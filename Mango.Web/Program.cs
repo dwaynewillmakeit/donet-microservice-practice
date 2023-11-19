@@ -11,10 +11,13 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
 builder.Services.AddHttpClient<ICouponService, CouponService>();
-StaticDetail.BaseUrl = builder.Configuration["ServiceUrls:CouponAPI"];
+builder.Services.AddHttpClient<IAuthService, AuthService>();
+StaticDetail.CouponApiBaseUrl = builder.Configuration["ServiceUrls:CouponAPI"];
+StaticDetail.AuthApiBaseUrl = builder.Configuration["ServiceUrls:AuthAPI"];
 
 builder.Services.AddScoped<IBaseService, BaseService>();
 builder.Services.AddScoped<ICouponService, CouponService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 var app = builder.Build();
 

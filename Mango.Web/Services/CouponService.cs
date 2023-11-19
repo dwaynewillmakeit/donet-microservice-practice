@@ -20,7 +20,7 @@ namespace Mango.Web.Services
             {
                 ApiType = Utils.StaticDetail.ApiType.POST,
                 Data = couponDto,
-                Url = StaticDetail.BaseUrl + "/api/coupon"
+                Url = StaticDetail.CouponApiBaseUrl + "/api/coupon"
             });
         }
 
@@ -29,7 +29,7 @@ namespace Mango.Web.Services
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = Utils.StaticDetail.ApiType.DELETE,
-                Url = StaticDetail.BaseUrl + "/api/coupon/" + id
+                Url = StaticDetail.CouponApiBaseUrl + "/api/coupon/" + id
             });
         }
 
@@ -38,7 +38,7 @@ namespace Mango.Web.Services
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = Utils.StaticDetail.ApiType.GET,
-                Url = StaticDetail.BaseUrl + "/api/coupon"
+                Url = StaticDetail.CouponApiBaseUrl + "/api/coupon"
             });
         }
 
@@ -47,7 +47,7 @@ namespace Mango.Web.Services
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = Utils.StaticDetail.ApiType.GET,
-                Url = StaticDetail.BaseUrl + "/api/coupon/get-by-code/" + couponCode
+                Url = StaticDetail.CouponApiBaseUrl + "/api/coupon/get-by-code/" + couponCode
             });
         }
 
@@ -56,7 +56,7 @@ namespace Mango.Web.Services
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = Utils.StaticDetail.ApiType.GET,
-                Url = StaticDetail.BaseUrl + "/api/coupon/" + id
+                Url = StaticDetail.CouponApiBaseUrl + "/api/coupon/" + id
             });
         }
 
@@ -66,7 +66,7 @@ namespace Mango.Web.Services
             {
                 ApiType = Utils.StaticDetail.ApiType.PUT,
                 Data = couponDto,
-                Url = StaticDetail.BaseUrl + "/api/coupon"
+                Url = StaticDetail.CouponApiBaseUrl + "/api/coupon"
             });
         }
     }
