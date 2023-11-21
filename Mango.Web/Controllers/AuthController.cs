@@ -47,6 +47,11 @@ namespace Mango.Web.Controllers
 
                 return RedirectToAction("Index", "Home");
             }
+            else
+            {
+                TempData["error"] = loginResponse.Message;
+
+            }
 
             ModelState.AddModelError("CustomError", loginResponse.Message);
 
@@ -89,6 +94,12 @@ namespace Mango.Web.Controllers
                     TempData["success"] = "Registration Successful";
 
                     return RedirectToAction(nameof(Login));
+                }
+                else
+                {
+
+                    TempData["error"] = registrationResponse.Message;
+
                 }
 
             }
