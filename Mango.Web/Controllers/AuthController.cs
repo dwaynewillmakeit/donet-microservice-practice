@@ -136,6 +136,10 @@ namespace Mango.Web.Controllers
                 new Claim(ClaimTypes.Name,
                 jwtToken.Claims.FirstOrDefault(u => u.Type == JwtRegisteredClaimNames.Email).Value));
 
+            claimsIdentity.AddClaim(
+                new Claim(ClaimTypes.Role,
+                jwtToken.Claims.FirstOrDefault(u => u.Type == "role").Value));
+
 
             var principal = new ClaimsPrincipal(claimsIdentity);
 
