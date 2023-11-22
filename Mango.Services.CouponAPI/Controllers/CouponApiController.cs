@@ -47,6 +47,7 @@ namespace Mango.Services.CouponAPI.Controllers
 
         [HttpGet]
         [Route("{id:int}")]
+        [Authorize]
         public object Get(int id)
         {
 
@@ -72,6 +73,7 @@ namespace Mango.Services.CouponAPI.Controllers
 
 
         [HttpGet]
+        [Authorize]
         [Route("get-by-code/{code}")]
         public object GetByCode(string code)
         {
@@ -95,6 +97,7 @@ namespace Mango.Services.CouponAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "ADMIN")]
         public object Post([FromBody] CouponDto couponDto)
         {
 
@@ -118,6 +121,7 @@ namespace Mango.Services.CouponAPI.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "ADMIN")]
         public object Put([FromBody] CouponDto couponDto)
         {
 
@@ -141,6 +145,7 @@ namespace Mango.Services.CouponAPI.Controllers
         }
         [HttpDelete]
         [Route("{id:int}")]
+        [Authorize(Roles = "ADMIN")]
         public object Delete(int id)
         {
 
