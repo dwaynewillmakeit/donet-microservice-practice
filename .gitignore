@@ -8,3 +8,11 @@
 **/obj/*
 /Mango.Services.CouponAPI/bin/Debug/net8.0/Mango.Services.CouponAPI.exe
 /.vs
+/Mango.Services.CouponAPI/obj/Mango.Services.CouponAPI.csproj.nuget.g.props
+/Mango.Services.CouponAPI/obj/
+/Mango.Services.CouponAPI/obj/Mango.Services.CouponAPI.csproj.nuget.dgspec.json
+/Mango.Services.CouponAPI/obj/project.assets.json
+/Mango.Services.CouponAPI/obj/project.nuget.cache
+/Mango.Services.CouponAPI/obj/Debug/
+/Mango.Services.CouponAPI/obj/Debug/net8.0/Mango.Services.CouponAPI.GeneratedMSBuildEditorConfig.editorconfig
+/Mango.Services.CouponAPI/obj/Debug/net8.0/Mango.Services.CouponAPI.csproj.AssemblyReference.cache
