@@ -1,10 +1,9 @@
-using AutoMapper;
-using Mango.Services.CouponAPI;
-using Mango.Services.CouponAPI.Data;
-using Mango.Services.CouponAPI.Extentions;
+
+using Mango.Services.ProductApi;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -53,14 +52,14 @@ builder.Services.AddSwaggerGen(option =>
 });
 
 //This is a custom extention
-builder.AddAppAuthentication();
+//builder.AddAppAuthentication();
 
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName =="Local")
+if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName == "Local")
 {
     app.UseSwagger();
     app.UseSwaggerUI();
