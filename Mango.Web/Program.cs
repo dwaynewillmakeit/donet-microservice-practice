@@ -11,13 +11,16 @@ builder.Services.AddControllersWithViews();
 //Configure HttpClient and Setup DI for HttpClientFactory
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
+builder.Services.AddHttpClient<IProductService, ProductService>();
 builder.Services.AddHttpClient<ICouponService, CouponService>();
 builder.Services.AddHttpClient<IAuthService, AuthService>();
 StaticDetail.CouponApiBaseUrl = builder.Configuration["ServiceUrls:CouponAPI"];
 StaticDetail.AuthApiBaseUrl = builder.Configuration["ServiceUrls:AuthAPI"];
+StaticDetail.ProductApiBaseUrl = builder.Configuration["ServiceUrls:ProductAPI"];
 
 builder.Services.AddScoped<ITokenProvider, TokenProvider>();
 builder.Services.AddScoped<IBaseService, BaseService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICouponService, CouponService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
@@ -29,12 +32,16 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 var app = builder.Build();
 
+builder.Logging.AddConsole();
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
+
+    app.UseDeveloperExceptionPage();
 }
 
 app.UseHttpsRedirection();

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using AutoMapper;
+using Mango.Services.ProductApi.Extentions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -52,7 +53,7 @@ builder.Services.AddSwaggerGen(option =>
 });
 
 //This is a custom extention
-//builder.AddAppAuthentication();
+builder.AddAppAuthentication();
 
 builder.Services.AddAuthorization();
 

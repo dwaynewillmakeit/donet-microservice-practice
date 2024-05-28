@@ -13,10 +13,13 @@ namespace Mango.Web.Services
 
         private readonly ITokenProvider _tokenProvider;
 
-        public BaseService(IHttpClientFactory httpClientFactory, ITokenProvider tokenProvider)
+        ILogger<BaseService> _logger;
+
+        public BaseService(IHttpClientFactory httpClientFactory, ITokenProvider tokenProvider,ILogger<BaseService> logger)
         {
             _httpClientFactory = httpClientFactory;
             _tokenProvider = tokenProvider;
+            _logger = logger;
         }
 
         public async Task<ResponseDto?> SendAsync(RequestDto requestDto, bool withBearer = true)
@@ -93,6 +96,8 @@ namespace Mango.Web.Services
                     Message = e.Message,
                     IsSuccess = false
                 };
+                _logger.LogError(e.Message);
+                _logger.LogError( e.StackTrace);
 
                 return dto;
 
